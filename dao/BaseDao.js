@@ -7,27 +7,31 @@ function BaseDao(){}
 
 /**
 
-insertAryy:['±Ì√˚'£¨'']
+insertAryy:['Ë°®Âêç','Ë°®Â≠óÊÆµ'Ôºå‚ÄôÂÄº‚Äò]
 */
 BaseDao.prototype.insert = function(insertAryy){
 	
 	var sql = 'SELECT * FROM ?? WHERE ?? = ?';
 	
     var inserts = ['users', 'id', userId];
+
+    var sqlInsert = 'insert into users (name ,password,email) values ("test" , "123456","tt@qq.com")';
 }
 
 
 /*
 
-selectAryy:['±Ì√˚','selectByWhat','value']
+selectAryy:['¬±√≠√É√ª','selectByWhat','value']
  // var select = ['users', 'id', userId];
 */
 BaseDao.prototype.select = function(selectAryy){
 	
 	var sql = 'SELECT * FROM ?? WHERE ?? = ?';
-	
-  
-	 
-    query = mysql.format(sql, selectAryy);
-	
+	//var inserts = ['users', 'id', userId];
+    var selectQuery = mysql.format(sql, selectAryy);
+
+    return selectQuery;
+    
 }
+
+exports.BaseDao = BaseDao;
